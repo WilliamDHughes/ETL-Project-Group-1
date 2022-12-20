@@ -1,0 +1,41 @@
+# Wine tables
+
+Wines
+-
+list_no serial PK
+brand_id int FK >- Brand.brand_id
+vintage_id int FK >- Vintage.vintage_id
+rating float
+num_ratings int
+region_id int
+country_id int
+year date
+last_updated date
+
+
+Brand
+-
+brand_id serial PK
+brand_name varchar(50)
+
+
+Vintage 
+----
+vintage_id serial PK
+vintage_name varchar(50)
+
+Price
+----
+list_no int FK >- Wines.list_no
+price float
+
+
+Region
+----
+list_no int FK >- Wines.list_no
+region varchar(50)
+
+Country
+----
+list_no int FK >- Wines.list_no
+country varchar(50)
